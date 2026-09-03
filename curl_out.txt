@@ -1,0 +1,27 @@
+Note: Unnecessary use of -X or --request, POST is already inferred.
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 127.0.0.1:3000...
+* Connected to localhost (127.0.0.1) port 3000 (#0)
+> POST /api/chat HTTP/1.1
+> Host: localhost:3000
+> User-Agent: curl/7.88.1
+> Accept: */*
+> Content-Type: application/json
+> Content-Length: 67
+> 
+} [67 bytes data]
+< HTTP/1.1 500 Internal Server Error
+< X-Powered-By: Express
+< Content-Type: text/plain; charset=utf-8
+< Transfer-Encoding: chunked
+< Content-Length: 1721
+< ETag: W/"6b9-B2Fx0YltygEECstHbO24m2Qwx2Q"
+< Date: Mon, 20 Jul 2026 17:18:30 GMT
+< Connection: keep-alive
+< Keep-Alive: timeout=5
+< 
+{ [1733 bytes data]
+100  1788    0  1721  100    67   6528    254 --:--:-- --:--:-- --:--:--  6798
+* Connection #0 to host localhost left intact
+{"error":"{\"error\":{\"message\":\"{\\n  \\\"error\\\": {\\n    \\\"code\\\": 429,\\n    \\\"message\\\": \\\"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\\\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash\\\\nPlease retry in 29.868129222s.\\\",\\n    \\\"status\\\": \\\"RESOURCE_EXHAUSTED\\\",\\n    \\\"details\\\": [\\n      {\\n        \\\"@type\\\": \\\"type.googleapis.com/google.rpc.Help\\\",\\n        \\\"links\\\": [\\n          {\\n            \\\"description\\\": \\\"Learn more about Gemini API quotas\\\",\\n            \\\"url\\\": \\\"https://ai.google.dev/gemini-api/docs/rate-limits\\\"\\n          }\\n        ]\\n      },\\n      {\\n        \\\"@type\\\": \\\"type.googleapis.com/google.rpc.QuotaFailure\\\",\\n        \\\"violations\\\": [\\n          {\\n            \\\"quotaMetric\\\": \\\"generativelanguage.googleapis.com/generate_content_free_tier_requests\\\",\\n            \\\"quotaId\\\": \\\"GenerateRequestsPerDayPerProjectPerModel-FreeTier\\\",\\n            \\\"quotaDimensions\\\": {\\n              \\\"location\\\": \\\"global\\\",\\n              \\\"model\\\": \\\"gemini-2.5-flash\\\"\\n            },\\n            \\\"quotaValue\\\": \\\"20\\\"\\n          }\\n        ]\\n      },\\n      {\\n        \\\"@type\\\": \\\"type.googleapis.com/google.rpc.RetryInfo\\\",\\n        \\\"retryDelay\\\": \\\"29s\\\"\\n      }\\n    ]\\n  }\\n}\\n\",\"code\":429,\"status\":\"Too Many Requests\"}}"}

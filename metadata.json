@@ -1,0 +1,6 @@
+{
+  "name": "Worldilm AI",
+  "description": "A brilliantly intelligent, deeply knowledgeable, and warm AI assistant with advanced reasoning, document workflows, and real-time interactive capabilities.",
+  "requestFramePermissions": ["camera", "microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

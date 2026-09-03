@@ -1,0 +1,44 @@
+{
+  "entities": {
+    "ApiKey": {
+      "title": "ApiKey",
+      "description": "Dynamic API key for high-availability multi-provider pooling",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["gemini", "grok", "groq"],
+          "description": "Provider type (gemini, grok, or groq)"
+        },
+        "value": {
+          "type": "string",
+          "description": "The secret raw API key"
+        },
+        "name": {
+          "type": "string",
+          "description": "A human-readable label for the key"
+        },
+        "active": {
+          "type": "boolean",
+          "description": "Whether this key is actively used in the pool"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of key creation"
+        },
+        "createdBy": {
+          "type": "string",
+          "description": "User UID who added this key"
+        }
+      },
+      "required": ["type", "value", "name", "active"]
+    }
+  },
+  "firestore": {
+    "/api_keys/{keyId}": {
+      "schema": "ApiKey",
+      "description": "Protected dynamic key repository accessible and configurable by authenticated users"
+    }
+  }
+}

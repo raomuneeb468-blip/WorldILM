@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="WorldILM AI">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#4f6bf0">
+    <meta name="description" content="WorldILM — Intelligent AI Assistant">
+    <title>Worldilm AI</title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none'><defs><linearGradient id='wi-logo-grad' x1='4' y1='6' x2='28' y2='26' gradientUnits='userSpaceOnUse'><stop offset='0' stop-color='%234f6bf0'/><stop offset='1' stop-color='%2317c3e6'/></linearGradient></defs><path d='M5 9 L10.5 24 L16 13 L21.5 24 L27 9' stroke='url(%23wi-logo-grad)' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round' fill='none'/><circle cx='16' cy='6' r='2.1' fill='url(%23wi-logo-grad)'/></svg>" />
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='512' height='512'><rect width='512' height='512' rx='128' fill='%23ffffff'/><defs><linearGradient id='grad' x1='64' y1='96' x2='448' y2='416' gradientUnits='userSpaceOnUse'><stop offset='0' stop-color='%234f6bf0'/><stop offset='1' stop-color='%2317c3e6'/></linearGradient></defs><path d='M80 144 L168 384 L256 208 L344 384 L432 144' stroke='url(%23grad)' stroke-width='54' stroke-linecap='round' stroke-linejoin='round' fill='none'/><circle cx='256' cy='96' r='34' fill='url(%23grad)'/></svg>" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for (let registration of registrations) {
+            registration.unregister();
+          }
+        });
+      }
+      if ('caches' in window) {
+        caches.keys().then(function(names) {
+          for (let name of names) {
+            caches.delete(name);
+          }
+        });
+      }
+    </script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Big+Shoulders+Display:wght@700;900&family=Bricolage+Grotesque:wght@600;800&family=Cormorant+Garamond:wght@600;700&family=DM+Serif+Display&family=Fraunces:wght@600;800&family=Instrument+Serif&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Libre+Caslon+Text:wght@700&family=Outfit:wght@400;500;600;700&family=Playfair+Display:wght@600;800&family=Plus+Jakarta+Sans:wght@500;700;800&family=Sora:wght@600;800&family=Space+Grotesk:wght@600;700&family=Unbounded:wght@600;800&family=Zilla+Slab:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
+    <!-- Code Syntax Highlighter -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- HTML Sanitizer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    <!-- PDF Parser -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <!-- KaTeX Mathematics -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
